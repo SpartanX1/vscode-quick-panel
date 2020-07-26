@@ -20,7 +20,7 @@ They do the same as these default actions:
 
 ## How it works
 
-![](img/screenshots/demo.gif)
+![demo](/img/screenshots/demo.gif)
 
 
 ## Release Notes
