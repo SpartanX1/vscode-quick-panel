@@ -1,0 +1,168 @@
+{
+	"name": "shortcut-panel",
+	"displayName": "Shortcuts Panel",
+	"author": {
+		"name": "Abhijoy Basak",
+		"email": "basak.abhijoy@gmail.com"
+	},
+	"repository": {
+		"url": "https://github.com/SpartanX1/vscode-quick-panel"
+	},
+	"keywords": [
+		"pin",
+		"format",
+		"keys",
+		"shortcuts",
+		"menu"
+	],
+	"icon": "img/icons/icon.png",
+	"publisher": "AbhijoyBasak",
+	"description": "Adds most needed shortcuts on the title bar for ease of use",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Keymaps"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.PinBtn",
+				"title": "Pin File",
+				"icon": {
+					"dark": "./img/editor/pin-light.svg",
+					"light": "./img/editor/pin-dark.svg"
+				}
+			},
+			{
+				"command": "extension.FormatBtn",
+				"title": "Format File",
+				"icon": {
+					"dark": "./img/editor/format-light.svg",
+					"light": "./img/editor/format-dark.svg"
+				}
+			},
+			{
+				"command": "extension.OpenInExplorer",
+				"title": "Open In File Explorer",
+				"icon": {
+					"dark": "./img/editor/explorer-light.svg",
+					"light": "./img/editor/explorer-dark.svg"
+				}
+			},
+			{
+				"command": "extension.CloseOthers",
+				"title": "Close Others",
+				"icon": {
+					"dark": "./img/editor/close-light.svg",
+					"light": "./img/editor/close-dark.svg"
+				}
+			},
+			{
+				"command": "extension.CloseAll",
+				"title": "Close All",
+				"icon": {
+					"dark": "./img/editor/close-all-light.svg",
+					"light": "./img/editor/close-all-dark.svg"
+				}
+			},
+			{
+				"command": "extension.OpenTerminal",
+				"title": "Open Panel",
+				"icon": {
+					"dark": "./img/editor/terminal-light.svg",
+					"light": "./img/editor/terminal-dark.svg"
+				}
+			},
+			{
+				"command": "extension.StartDebug",
+				"title": "Start Debug",
+				"icon": {
+					"dark": "./img/editor/debug-light.svg",
+					"light": "./img/editor/debug-dark.svg"
+				}
+			},
+			{
+				"command": "extension.OpenCommandPalette",
+				"title": "Open Command Palette",
+				"icon": {
+					"dark": "./img/editor/command-palette-light.svg",
+					"light": "./img/editor/command-palette-dark.svg"
+				}
+			},
+			{
+				"command": "extension.SearchFiles",
+				"title": "Search Files",
+				"icon": {
+					"dark": "./img/editor/find-files-light.svg",
+					"light": "./img/editor/find-files-dark.svg"
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "extension.CloseAll",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.CloseOthers",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.OpenTerminal",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.OpenInExplorer",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.PinBtn",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.FormatBtn",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.StartDebug",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.OpenCommandPalette",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.SearchFiles",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "rm -rf ./out && tsc -p ./ && npm run copy",
+		"copy": "cp -r img ./out/img",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"glob": "^7.1.4",
+		"mocha": "^7.1.2",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2"
+	},
+	"dependencies": {}
+}
